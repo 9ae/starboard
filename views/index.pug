@@ -30,7 +30,20 @@ block content
         div(class="swatch" style="background-color:#aaa") Primary color
     div(class="grid-item 1/2")
       input(
-        class="search"
-        type="text"
-        placeholder="text"
+        class="search whole-line"
+        type="search"
+        placeholder="search bar"
       )
+      input(
+        type="text"
+        class="validation success whole-line"
+        value="success"
+      )
+      input(
+        type="text"
+        class="validation fail whole-line"
+        value="fail"
+      )
+      button(type="submit" class="whole-line") Button
+      a(href="#" class="btn btn-outline whole-line") Outline button
+      
