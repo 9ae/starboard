@@ -1,0 +1,38 @@
+extends base.pug
+
+block scripts
+  script(
+    type="text/javascript"
+    src="js/dashboard.js"
+  )
+
+block content
+  title= "Starboard"
+  - var cats = ['books', 'anime', 'tv shows', 'films', 'comics', 'games']
+  
+  div(class="container")
+    h2 Discover Fandoms
+    div(class="section")
+      input(
+        id="search_bar"
+        type="text"
+        placeholder="Find your fandom"
+        class="search"
+        onFocus="onSearch(this.event)"
+      )
+      div(
+        id="search_results"
+        class="grid search-results"
+      )
+        div(class="grid-item 1/2 search-result-item")
+          p Digimon Adventures
+        div(class="grid-item 1/2 search-result-item")
+          p Digimon Tamers
+        div(class="grid-item 1/2 search-result-item")
+          p Digimon Frontiers
+  
+    div(class="section")
+      h3 Browse
+      div(class="grid")
+        each cat in cats
+          div(class="grid-item 1/2 cat-item")= cat
