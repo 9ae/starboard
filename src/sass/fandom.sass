@@ -1,0 +1,53 @@
+$tab-border-radius: 4px
+.tab-menu
+  padding: $box-padding
+  margin-top: 20px
+
+  ul.tab-links
+    list-style-type: none
+    margin-bottom: 0
+
+    li
+      display: inline-block
+      padding: 2px 6px
+      border-bottom: 2px solid transparent
+      margin-left: 0
+
+      &:hover
+        border-color: $color2
+
+      &.active
+        border-color: $light-grey
+        background-color: $light-grey
+        border-top-left-radius: $tab-border-radius
+        border-top-right-radius: $tab-border-radius
+
+      a
+        text-decoration: none
+        text-transform: uppercase
+
+  .tab-details
+    background-color: $light-grey
+    border-radius: $tab-border-radius
+    border-top-left-radius: 0
+    padding: $box-padding
+
+  .show-more
+    margin-top: 20px
+    margin-bottom: 10px
+    text-align: center
+
+  .rest
+    display: none
+
+    &.active
+      display: flex
+
+.filter-button
+  @extend .fill80
+  text-align: center
+
+  @media(min-width: 768px)
+    width: unset
+    margin-left: unset
+    margin-right: unset
