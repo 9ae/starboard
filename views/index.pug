@@ -17,17 +17,17 @@ block content
       h3 Color Palette
       div(class="color-palette")
         div(class="swatch color0") Text
-        div(class="swatch color2") Primary
-        div(class="swatch color4") Secondary
+        div(class="swatch color1") Primary
+        div(class="swatch color2") Secondary
         div(class="swatch color3") Error
-        div(class="swatch color1") Success
+        div(class="swatch color4") Success
       h3 Grey palette
       div(class="color-palette")
-        div(class="swatch" style="background-color:#aaa") Primary color
-        div(class="swatch" style="background-color:#aaa") Primary color
-        div(class="swatch" style="background-color:#aaa") Primary color
-        div(class="swatch" style="background-color:#aaa") Primary color
-        div(class="swatch" style="background-color:#aaa") Primary color
+        div(class="swatch white") white
+        div(class="swatch light-grey") light grey
+        div(class="swatch grey") grey
+        div(class="swatch dark-grey") dark grey
+        div(class="swatch black") black
     div(class="grid-item 1/2")
       input(
         class="search whole-line"
@@ -44,6 +44,8 @@ block content
         class="validation fail whole-line"
         value="fail"
       )
-      button(type="submit" class="whole-line") Button
+      div(class="whole-line")
+        button(type="submit") Button
+        button(type="button" disabled) Disabled
       a(href="#" class="btn btn-outline whole-line") Outline button
       

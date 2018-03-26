@@ -1,44 +1,51 @@
 // Define settings
-$font-family-base: "Open Sans", sans-serif
+$font-family-base: 'Rubik', sans-serif
+$font-family-headings: 'Varela Round', sans-serif
 $grid-container: 960px
 $grid-gutter: 8px
-$light-grey: #ccc
 $box-padding: 6px
 $btn-flat: true
 
 //Colors
-$color0: #0d232c
-$color1: #3BAE93
-$color2: #08878c
-$color3: #e55d7a
-$color4: #ae69b3
+$white: #fafafa
+$light-grey: #e5e2e1
+$grey: #877c78
+$dark-grey: #443e3b
+$black: #2c2421
+
+$color0: #4B3070
+$color1: #ff7644
+$color2: #f1619d
+$color3: #e94e75
+$color4: #18c33d
 
 // body background color
 $color-body: #fff
 // ui elements color like rules, borders, form inputs
-$color-ui: $light-grey
+$color-ui: $grey
 // button color without any modifiers
-$color-btn: $color2
+$color-btn: $color1
 // base font color
 $color-text: $color0
 // links color
-$color-link: $color4
+$color-link: $color2
 // blockquote and `.text-muted` color
-$color-muted: $light-grey
+$color-muted: $grey
 // small color
-$color-small: $color4
+$color-small: $color2
 // disabled form input and buttons color
 $color-disabled: $light-grey
 // brand color
-$color-brand: $color2
+$color-brand: $color1
 // positive color
-$color-positive: $color1
+$color-positive: $color4
 // negative color
 $color-negative: $color3
 
 // Import Hocus-Pocus
 @import "../../node_modules/hocus-pocus/hocus-pocus"
 
+@import "overrides"
 @import "components"
 @import "header"
 @import "dashboard"
