@@ -6,3 +6,22 @@ input[type="button"], input[type="submit"], button, .btn
   border-radius: 1.375rem
   letter-spacing: 0.07rem
   margin: 2px
+
+blockquote
+  border-left: 0
+  margin: 8px 6px
+  font-style: italic
+  color: $white
+  background-color: $black
+  padding: $box-padding
+  border-radius: $box-padding
+
+  &:nth-child(odd)
+    background-color: $color1
+    text-align: left
+    padding-left: 5*$box-padding
+
+  &:nth-child(even)
+    background-color: $color2
+    text-align: right
+    padding-right: 5*$box-padding
