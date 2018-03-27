@@ -9,7 +9,8 @@ app.get('/dashboard', (req, res) => res.render('dashboard',
   {
     title: 'Starboard',
     cats: db.categories
-  }))
+  })
+)
 app.get('/fandom/:domname', (req, res) => {
   let fandom = db.fandoms[req.params.domname];
   return res.render('fandom', {
@@ -18,6 +19,13 @@ app.get('/fandom/:domname', (req, res) => {
     threads: fandom.threads
   });
 })
+app.get('/circle', (req, res) =>
+  res.render('peacecircle', {
+    title: 'Peace Circle',
+    participants: db.peacecircle.participants,
+    states: db.peacecircle.states
+  })
+)
 
 app.use(express.static('output'))
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

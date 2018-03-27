@@ -60,5 +60,43 @@ module.exports = {
         }
       ]
     }
+  },
+  "peacecircle":{
+    "participants": [
+      {
+        "name": "Leia",
+        "avatar": "/images/avatar0.png"
+      },
+      {
+        "name": "Amilyn",
+        "avatar": "/images/avatar1.png"
+      },
+      {
+        "name": "Me",
+        "avatar": "/images/avatar2.png"
+      }
+    ],
+    "states": [
+      {
+        "title": "Acknowledge",
+        "prompts": "Let's take turns to describe be situation, and how it made you feel?"
+      },
+      {
+        "title": "Understand",
+        "prompts": "What lead this to happen?"
+      },
+      {
+        "title": "Empathize",
+        "prompts": "Why was this issue experienced as harm?"
+      },
+      {
+        "title": "Resolve",
+        "prompts": "How might we heal?"
+      },
+      {
+        "title": "Moving Forward",
+        "prompts": "How might we prevent this in the future?"
+      }
+    ]
   }
 }

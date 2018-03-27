@@ -1,0 +1,47 @@
+extends base.pug
+
+mixin line(avatar, text)
+  .line
+    img(class="img-circle" src=avatar)
+    .bubble= text
+
+block scripts
+  script(
+    type="text/javascript"
+    src="js/peacecircle.js"
+  )
+
+block content
+  - var modAvatar = "/images/avatar_mod.png"
+  div(class="peace-circle")
+    ul(class="states")
+      each val, index in states
+        li(class=index===1 ? "active": "")
+          div(class="state-title")= val.title
+          div(class="state-placeholder") &nbsp;
+    
+    div(class="container")
+      .people
+        each person in participants
+          .person
+            img(
+              class="img-circle"
+              src=person.avatar
+            )
+            label= person.name
+        .person.active
+          img(
+            class="img-circle"
+            src=modAvatar
+          )
+          label Moderator
+
+      .convo
+        +line(modAvatar, states[0].prompts)
+        +line(participants[0].avatar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum elementum gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+        +line(participants[1].avatar, "Sed feugiat lacus eu purus varius, vitae malesuada tortor laoreet. The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box")
+        +line(participants[2].avatar, "Nulla ultrices, nisi quis placerat suscipit, augue elit egestas lorem, at fermentum erat metus id tortor. The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box")
+        +line(modAvatar, states[1].prompts)
+      
+    .reply-box
+      textarea(placeholder="Your feeligns and thoughts?")

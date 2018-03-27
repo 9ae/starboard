@@ -1,0 +1,105 @@
+$avatar-height: 64px
+$states-height: 25px
+$reply-height: 80px
+$nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
+
+.peace-circle
+
+  ul.states
+    list-style-type: none
+    border-bottom: 1px solid $dark-grey
+    width: 100%
+    margin-bottom: 0
+    height: $states-height
+
+    li
+      display: inline-block
+      height: 25px
+      border-right: 1px solid $dark-grey
+      margin-left: 0
+
+      .state-title
+        display: none
+      .state-placeholder
+        display: inline-block
+        width: 25px
+
+      &.active
+        .state-title
+          display: inline-block
+        .state-placeholder
+          display: none
+
+      &:last-child
+        border-right: 0
+
+  .people
+    display: flex
+    justify-content: space-around
+
+    .person
+      display: inline-block
+
+      img
+        width: auto
+        height: $avatar-height
+
+      label
+        text-align: center
+
+      &.active
+        img
+          +glow($color-positive)
+
+      .placeholder
+        width: 64px
+        height: auto
+        display: block
+        background-color: $dark-grey
+        border-radius: 32px
+
+  .convo
+    width: 100%
+    overflow-y: scroll
+    height: calc(100% - #{$nonconvoheight})
+
+    .line
+      width: 100%
+      margin: 8px 6px
+      vertical-align: top
+
+      img
+        display: inline-block
+        width: 32px
+        height: auto
+      .bubble
+        display: inline-block
+        color: $white
+        background-color: $black
+        padding: $box-padding
+        border-radius: $box-padding
+        font-weight: 300
+        font-size: 0.8rem
+        line-height: 1.0rem
+        width: calc(100% - 40px)
+
+      &:nth-child(odd)
+        .bubble
+          background-color: $color1
+
+      &:nth-child(even)
+        .bubble
+          background-color: $color2
+
+  .reply-box
+    width: 100%
+    height: $reply-height
+    z-index: 100
+    background-color: $white
+    box-shadow: -2px 1px 1px $light-grey
+    position: fixed
+    bottom: 0
+    left: 0
+
+    textarea
+      @extend .fill90
