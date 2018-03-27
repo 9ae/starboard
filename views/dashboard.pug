@@ -1,5 +1,12 @@
 extends base.pug
 
+mixin result(name, image, link)
+  div(class="grid-item 1/2")
+    a(href=link)
+      .search-result-item
+        img(class="thumbnail-image" src=image)
+        .thumbnail-label= name
+
 block scripts
   script(
     type="text/javascript"
@@ -9,8 +16,8 @@ block scripts
 block content
   
   div(class="container")
-    h2 Discover Fandoms
     div(class="section")
+      h2 Discover Fandoms
       input(
         id="search_bar"
         type="search"
@@ -22,15 +29,14 @@ block content
         id="search_results"
         class="grid search-results"
       )
-        div(class="grid-item 1/2 search-result-item")
-          p Digimon Adventures
-        div(class="grid-item 1/2 search-result-item")
-          p Digimon Tamers
-        div(class="grid-item 1/2 search-result-item")
-          p Digimon Frontiers
+        +result("Harry Potter", "/images/hp_th.jpg", "/fandom/harry_potter")
+        //- div(class="grid-item 1/2 search-result-item")
+        //-   p Digimon Tamers
+        //- div(class="grid-item 1/2 search-result-item")
+        //-   p Digimon Frontiers
   
-    div(class="section")
-      h3 Browse
-      div(class="grid")
-        each cat in cats
-          div(class="grid-item 1/2 cat-item")= cat
+    //- div(class="section")
+    //-   h3 Browse
+    //-   div(class="grid")
+    //-     each cat in cats
+    //-       div(class="grid-item 1/2 cat-item")= cat

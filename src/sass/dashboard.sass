@@ -2,9 +2,35 @@
   background-color: $light-grey
 
 .search-results
-  background-color: $light-grey
-  padding: $box-padding
+  margin-top: $inner-spacing
   display: none
 
   &.active
-    display: block
+    display: flex
+
+.search-result-item
+  margin-left: 5%
+  width: 90%
+  position: relative
+  .thumbnail-image
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: auto
+    filter: brightness(0.8) saturate(50%)
+    z-index: -1
+    border-radius: $card-border-radius
+  .thumbnail-label
+    position: absolute
+    top: 0
+    left: 0
+    background: linear-gradient($black, rgba(0, 0, 0, 0))
+    width: 100%
+    padding-top: 3px
+    height: 3.0rem
+    color: $white
+    text-align: center
+    z-index: 1
+    border-top-left-radius: $card-border-radius
+    border-top-right-radius: $card-border-radius
