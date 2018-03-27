@@ -1,5 +1,13 @@
 extends base.pug
 
+mixin person(name, avatar, isActive)
+  div(class=isActive ? 'person active' : 'person')
+    img(
+      class="img-circle"
+      src=avatar
+    )
+    p.name.text-micro= name
+
 mixin line(avatar, text)
   .line
     img(class="img-circle" src=avatar)
@@ -17,24 +25,15 @@ block content
     ul(class="states")
       each val, index in states
         li(class=index===1 ? "active": "")
-          div(class="state-title")= val.title
+          .state-title.text-small= val.title
           div(class="state-placeholder") &nbsp;
+    hr(class="states-line")
     
     div(class="container")
       .people
         each person in participants
-          .person
-            img(
-              class="img-circle"
-              src=person.avatar
-            )
-            label= person.name
-        .person.active
-          img(
-            class="img-circle"
-            src=modAvatar
-          )
-          label Moderator
+          +person(person.name, person.avatar, false)
+        +person('Moderator', modAvatar, true)
 
       .convo
         +line(modAvatar, states[0].prompts)

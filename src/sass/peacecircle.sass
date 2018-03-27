@@ -1,28 +1,37 @@
 $avatar-height: 64px
-$states-height: 25px
+$states-height: 26px
 $reply-height: 80px
 $nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
+$states-color: darken($color4, 8%)
 
 .peace-circle
 
   ul.states
     list-style-type: none
-    border-bottom: 1px solid $dark-grey
     width: 100%
     margin-bottom: 0
     height: $states-height
+    margin-top: ($outer-spacing/-2) + 5px
+    text-align: center
 
     li
       display: inline-block
-      height: 25px
-      border-right: 1px solid $dark-grey
+      height: $states-height
       margin-left: 0
+      margin-right: 10px
 
       .state-title
         display: none
+        background-color: $states-color
+        padding: 0 ($box-padding+$states-height/2)
+        border-radius: $states-height/2
+        color: $white
       .state-placeholder
         display: inline-block
-        width: 25px
+        width: $states-height
+        background-color: $states-color
+        border-radius: $states-height/2
+        padding: 0 $box-padding
 
       &.active
         .state-title
@@ -33,9 +42,19 @@ $nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
       &:last-child
         border-right: 0
 
+  .states-line
+    margin-top: ($states-height/-2) - 2px
+    margin-bottom: 0
+    height: 4px
+    color: $states-color
+    border-color: $states-color
+    background-color: $states-color
+
   .people
     display: flex
     justify-content: space-around
+    margin-top: $inner-spacing
+    margin-bottom: $inner-spacing
 
     .person
       display: inline-block
@@ -44,7 +63,7 @@ $nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
         width: auto
         height: $avatar-height
 
-      label
+      p.name
         text-align: center
 
       &.active
