@@ -1,24 +1,43 @@
+$header-height: 48px
+$icon-height: 24px
+$header-color: desaturate($color0, 20%)
+$bottom-offset: 3px
+
 .app-header
-  background-color: $color-brand
+  background-color: $header-color
   width: 100%
-  height: 64px
+  height: $header-height
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-items: flex-end
+  padding: 0 $box-padding
+
+  .logo
+    display: inline-block
+    height: $icon-height
+    width: auto
+    margin-bottom: 2px + $bottom-offset
 
   .title
     text-align: center
     display: inline-block
-    width: calc(100% - 128px)
-    color: $white
+    color: $light-grey
+    margin-bottom: $bottom-offset
+    font-size: 1.2rem
+    line-height: 1.2rem
+    vertical-align: baseline
+    text-transform: uppercase
+    letter-spacing: 0.08rem
 
-.header-icon
-  display: inline-block
-  height: 90%
-  width: auto
+  .header-icons
+    display: inline-block
+    margin-bottom: 3px + $bottom-offset
 
-  .far
-    font-size: 50px
-    padding-top: 6px
-    padding-right: 5px
-    color: $white
+    i
+      font-size: $icon-height
+      margin-right: 10px
+      color: $light-grey
 
-  &.right
-    float: right
+      &:last-child
+        margin-right: 0

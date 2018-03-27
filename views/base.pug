@@ -19,10 +19,10 @@ html
   )
   block scripts
   body
-    div(class="app-header")
-      div(class="header-icon")
-        img(src="/images/Logo.png")
-      h1(class="title")= title
-      div(class="header-icon right")
+    header(class="app-header")
+      img(class="logo" src="/images/logo-small.png")
+      h4(class="title")= title
+      div(class="header-icons")
+        i(class="fas fa-search")
         i(class="far fa-user")
     block content
