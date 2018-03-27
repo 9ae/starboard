@@ -2,7 +2,7 @@ $avatar-height: 64px
 $states-height: 26px
 $reply-height: 80px
 $nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
-$states-color: lighten($color2, 25%)
+$states-color: $color2
 //lighten($color2, 25%)
 
 .peace-circle
@@ -111,7 +111,7 @@ $states-color: lighten($color2, 25%)
 
       .bubble
         display: inline-block
-        color: $white
+        color: $black
         background-color: $black
         padding: $box-padding + ($card-border-radius*0.5)
         border-radius: $card-border-radius
@@ -136,16 +136,16 @@ $states-color: lighten($color2, 25%)
 
       &:nth-child(odd)
         .bubble
-          background-color: desaturate($color1, 20%)
+          background-color: lighten($color1, 20%)
           &:after
-            border-right-color: desaturate($color1, 20%)
+            border-right-color: lighten($color1, 20%)
 
       &:nth-child(even)
         .bubble
-          background-color: desaturate($color2, 20%)
+          background-color: lighten($color2, 5%)
 
           &:after
-            border-right-color: desaturate($color2, 20%)
+            border-right-color: lighten($color2, 5%)
 
   .reply-box
     width: 100%
