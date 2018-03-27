@@ -24,17 +24,23 @@ $states-color: $color2
       height: $states-height
       margin-left: 0
       margin-right: 10px
+      vertical-align: top
 
       .state-title
         display: none
         background-color: $states-color
-        padding: 0 ($box-padding+$states-height/2)
+        padding: $states-height/4 $states-height/2
         border-radius: $states-height/2
-        color: $black
-        fon-size: 0.8rem
+        color: $color2
+        font-size: 0.8rem
+        line-height: 0.8rem
+        height: $states-height
+        box-sizing: border-box
+        text-transform: uppercase
       .state-placeholder
         display: inline-block
         width: $states-height
+        height: $states-height
         background-color: $states-color
         border-radius: $states-height/2
         padding: 0 $box-padding
