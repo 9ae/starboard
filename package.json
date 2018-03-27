@@ -1,0 +1,24 @@
+{
+  "name": "starboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "instyle": "sass --watch src/sass/main.sass output/styles/main.css",
+    "build": "babel src/es6 -d output/js",
+    "go": "npm run build; npm run instyle | tee sass.log | node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "hocus-pocus": "^0.3.5",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}
