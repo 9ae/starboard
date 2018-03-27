@@ -1,5 +1,5 @@
-$tab-border-radius: 4px
-$tab-menu-bg: $light-grey
+$tab-menu-item-color: $color1
+$tab-menu-item-color-active: $grey
 
 .tab-menu
   padding: $box-padding
@@ -7,40 +7,39 @@ $tab-menu-bg: $light-grey
   ul.tab-links
     list-style-type: none
     margin-bottom: 0
+    display: flex
+    justify-content: space-around
 
     li
       display: inline-block
-      padding: 3px $box-padding
-      border-bottom: 2px solid transparent
+      flex-grow: 1
+      text-align: center
+      border-bottom: 2px solid $light-grey
       margin-left: 0
 
       &:hover
-        border-color: $color1
+        border-color: $tab-menu-item-color
 
       &.active
-        border-color: $tab-menu-bg
-        background-color: $tab-menu-bg
-        border-top-left-radius: $tab-border-radius
-        border-top-right-radius: $tab-border-radius
-
+        border-color: $tab-menu-item-color-active
         a
-          color: $color1
+          color: $tab-menu-item-color-active
 
       a
         text-decoration: none
         text-transform: uppercase
-        color: $grey
+        color: $tab-menu-item-color
 
   .tab-details
-    background-color: $tab-menu-bg
-    border-radius: $tab-border-radius
-    border-top-left-radius: 0
-    padding: $box-padding
+    margin-top: $inner-spacing
 
   .show-more
     margin-top: 20px
     margin-bottom: 10px
     text-align: center
+
+    a
+      color: $grey
 
   .rest
     display: none
