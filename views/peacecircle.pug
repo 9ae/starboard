@@ -22,18 +22,19 @@ block scripts
 block content
   - var modAvatar = "/images/avatar_mod.png"
   div(class="peace-circle")
-    ul(class="states")
-      each val, index in states
-        li(class=index===1 ? "active": "")
-          .state-title.text-small= val.title
-          div(class="state-placeholder") &nbsp;
-    hr(class="states-line")
+    .states-wrapper
+      ul(class="states")
+        each val, index in states
+          li(class=index===1 ? "active": "")
+            .state-title.text-small= val.title
+            div(class="state-placeholder") &nbsp;
+      hr(class="states-line")
     
     div(class="container")
       .people
         each person in participants
-          +person(person.name, person.avatar, false)
-        +person('Moderator', modAvatar, true)
+          +person(person.name, person.avatar, person.name == "Me")
+        +person('Moderator', modAvatar, false)
 
       .convo
         +line(modAvatar, states[0].prompts)
@@ -43,4 +44,6 @@ block content
         +line(modAvatar, states[1].prompts)
       
     .reply-box
-      textarea(placeholder="Your feeligns and thoughts?")
+      textarea(placeholder="Your feelings and thoughts?")
+      a(href="#" class="send-btn")
+        i.fas.fa-arrow-circle-up

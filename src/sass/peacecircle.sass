@@ -7,12 +7,16 @@ $states-color: lighten($color2, 25%)
 
 .peace-circle
 
+  .states-wrapper
+    margin-top: ($outer-spacing/-2) + 5px
+    margin-bottom: $inner-spacing + 5px
+    box-sizing: border-box
+
   ul.states
     list-style-type: none
     width: 100%
     margin-bottom: 0
     height: $states-height
-    margin-top: ($outer-spacing/-2) + 5px
     text-align: center
 
     li
@@ -84,10 +88,17 @@ $states-color: lighten($color2, 25%)
     width: 100%
     overflow-y: scroll
     height: calc(100% - #{$nonconvoheight})
+    padding-bottom: $outer-spacing
 
     .line
       width: 100%
-      margin: 8px 6px
+      margin-top: $inner-spacing
+      margin-left: $box-padding
+      margin-right: $box-padding
+      margin-bottom: 0
+
+      &:first-child
+        margin-top: 0
 
       img
         display: inline-block
@@ -141,10 +152,24 @@ $states-color: lighten($color2, 25%)
     height: $reply-height
     z-index: 100
     background-color: $white
-    box-shadow: -2px 1px 1px $light-grey
+    box-shadow: 0 -2px 5px 0 $light-grey
+    padding: $box-padding
     position: fixed
     bottom: 0
     left: 0
 
     textarea
       @extend .fill90
+      border: 0
+      background: transparent
+      color: $color0
+      z-index: 101
+
+    .send-btn
+      position: absolute
+      bottom: $box-padding
+      right: $box-padding
+      z-index: 102
+      i
+        font-size: 32px
+        color: $color4
