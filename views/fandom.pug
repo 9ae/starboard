@@ -57,27 +57,48 @@ block scripts
   )
 
 block content
-  if 'characters' in cats
-    div(class="tab-menu")
-      ul(class="tab-links")
-        each val, index in cats
-          li(class= index === 'characters' ? "active": "")
-            a(href="#")= index
-      div(class="tab-details")
-        div(class="grid blurb")
-          each i in [0,1,2,3,4,5]
-            div(class="grid-item 1/3 compact-1/2")
-              a(href="#")= cats.characters[i]
-        div(id="theRest" class="grid rest")
-          - var n = 6
-          while n < cats.characters.length
-            div(class="grid-item 1/3 compact-1/2")
-              a(href="#")= cats.characters[n]
-            - n++
-        p(class="show-more")
-          a(href="#" onClick="showMore(this)") Show More
+  .container
+    .section
+      .grid.grid-pair.grid-middle
+        p(class="grid-item 2/3 text-small")
+          strong 987
+          |&nbsp;members &nbsp;&nbsp;
+          strong 21,159
+          |&nbsp;threads
+        div(class="grid-item 1/3")
+          if isJoined
+            button(
+              id="joinleave"
+              class="btn btn-outline"
+            ) Leave
+          else
+            button(
+              id="joinleave"
+              class="btn"
+            ) Join
   
-  div(class="container")
+  if 'characters' in cats
+    .section
+      div(class="tab-menu")
+        ul(class="tab-links")
+          each val, index in cats
+            li(class= index === 'characters' ? "active": "")
+              a(href="#")= index
+        div(class="tab-details")
+          div(class="grid blurb")
+            each i in [0,1,2,3,4,5]
+              div(class="grid-item 1/3 compact-1/2")
+                a(href="#")= cats.characters[i]
+          div(id="theRest" class="grid rest")
+            - var n = 6
+            while n < cats.characters.length
+              div(class="grid-item 1/3 compact-1/2")
+                a(href="#")= cats.characters[n]
+              - n++
+          p(class="show-more")
+            a(href="#" onClick="showMore(this)") Show More
+  
+  .section
     div(class="grid")
       div(class="grid-item 1/1")
         h3 Trending inside #{title}

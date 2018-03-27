@@ -8,3 +8,16 @@ const showMore = (element) => {
     element.innerHTML = lessText;
   }
 }
+
+
+window.onload = () => {
+  document.getElementById('joinleave').addEventListener('click', (evt) => {
+    if(evt.target.innerHTML === "Join"){
+      evt.target.innerHTML = "Leave"
+      evt.target.classList.add('btn-outline')
+    } else {
+      evt.target.innerHTML = "Join"
+      evt.target.classList.remove('btn-outline')
+    }
+  })
+}
