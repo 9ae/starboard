@@ -1,5 +1,55 @@
 extends base.pug
 
+mixin tagCloud(tags)
+  div(class="tag-cloud")
+    label Tags
+    each tag in tags
+      span(class="tag-chip")= tag
+
+mixin cardFic(item)
+  div(class="grid-item 6/12 compact-1/1")
+    div(class="box-thumbnail fic-card")
+      p(class="text-lead")= item.title
+        | &nbsp;by #{item.author}
+      p(class="text-small")= item.description
+      p Rating: #{item.rating}
+        if item.isChaptered
+          span(class="float-right") Chapters: #{item.chapters}
+      +tagCloud(item.tags)
+
+mixin cardArt(item)
+  div(class="grid-item 6/12 compact-1/1")
+    div(class="box-thumbnail art-card")
+      img(
+        class="img-rwd"
+        src=item.thumbnail
+        )
+      p(class="text-lead")= item.title
+        | &nbsp;by #{item.author}
+      p(class="text-small")= item.description
+      +tagCloud(item.tags)
+
+mixin cardTopic(item)
+  div(class="grid-item 6/12  compact-1/1")
+    div(class="box-thumbnail fic-card")
+      p(class="text-lead")= item.title
+      p(class="text-small") last post by #{item.author}
+        span(class="float-right") Repleis #{item.replies}
+      +tagCloud(item.tags)
+
+mixin cardVideo(item)
+  div(class="grid-item 6/12 compact-1/1")
+    div(class="box-thumbnail video-card")
+      img(
+        class="img-rwd"
+        src=item.thumbnail
+        )
+      p(class="text-lead")= item.title
+        | &nbsp;by #{item.author}
+      p(class="text-small")= item.description
+      p Rating: #{item.rating}
+      +tagCloud(item.tags)
+
 block scripts
   script(
     type="text/javascript"
@@ -39,3 +89,14 @@ block content
         )
       div(class="grid-item 1/3 compact-1/1")
         a(class="btn btn-outline filter-button") Filters
+    div(class="grid grid-top")
+      each th in threads
+        case th.type
+          when 'fic'
+            +cardFic(th)
+          when 'art'
+            +cardArt(th)
+          when 'topic'
+            +cardTopic(th)
+          when 'video'
+            +cardVideo(th)

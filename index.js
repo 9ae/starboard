@@ -14,7 +14,8 @@ app.get('/fandom/:domname', (req, res) => {
   let fandom = db.fandoms[req.params.domname];
   return res.render('fandom', {
     title: fandom.name,
-    cats: fandom.subdoms
+    cats: fandom.subdoms,
+    threads: fandom.threads
   });
 })
 

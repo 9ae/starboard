@@ -27,6 +27,7 @@ module.exports = {
           "author": "Anis",
           "source": "ffn",
           "isChaptered": true,
+          "chapters": "12/25",
           "rating": "R",
           "description": "They disover stuff...",
           "tags": ["slow-burn","post-dh"]
@@ -34,10 +35,21 @@ module.exports = {
         {
           "type": "art",
           "title": "Always said Severus",
-          "author": "Naomi"
+          "author": "Naomi",
           "thumbnail": "/images/data_potterpuffs.jpg",
           "description": "Potterpuffs redux",
           "tags": ["potterpuffs", "snape", "dumbledore"]
+        },
+        {
+          "type": "video",
+          "title": "A Very Potter Musical",
+          "description": "Produced by theater student's in UMich Ann Habor",
+          "author": "Team StarKid",
+          "thumbnail": "/images/data_avpm.png",
+          "url": "https://youtu.be/wmwM_AKeMCk",
+          "source": "youtube",
+          "rating": "PG-13",
+          "tags": ["theatre"]
         },
         {
           "type": "topic",
@@ -45,16 +57,6 @@ module.exports = {
           "replies": 300,
           "tags": ["speculation"],
           "author": "cassie_clare"
-        },
-        {
-          "type": "video",
-          "title": "A Very Potter Musical",
-          "author": "Team StarKid",
-          "thumbnail": "data_avpm.png",
-          "url": "https://youtu.be/wmwM_AKeMCk",
-          "source": "youtube",
-          "rating": "PG-13",
-          "tags": ["theatre"]
         }
       ]
     }
