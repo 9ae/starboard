@@ -3,6 +3,7 @@ module.exports = {
   fandoms: {
     "harry_potter": {
       "name": "Harry Potter",
+      "image": "/images/th_hp.jpg",
       "subdoms": {
         "characters": [
           "Harry Potter",
@@ -59,6 +60,26 @@ module.exports = {
           "author": "cassie_clare"
         }
       ]
+    },
+    "digimon_adv": {
+      "name": "Digimon Adventures",
+      "image": "/images/th_digiadv.jpg"
+    },
+    "digimon_tam": {
+      "name":"Digimon Tamers",
+      "image":"/images/th_digitamers.jpg"
+    },
+    "digimon_front": {
+      "name": "Digimon Frontiers",
+      "image": "/images/th_digifront.jpg"
+    },
+    "buffy": {
+      "name": "Buffyverse",
+      "image": "/images/th_buffy.jpg"
+    },
+    "night_circus": {
+      "name": "Night Circus",
+      "image": "/images/th_nightcirus.jpg"
     }
   },
   "peacecircle":{

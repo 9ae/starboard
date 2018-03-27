@@ -8,7 +8,8 @@ app.get('/', (req, res) => res.render('index', {title: 'Style Guide'}))
 app.get('/dashboard', (req, res) => res.render('dashboard',
   {
     title: 'Starboard',
-    cats: db.categories
+    cats: db.categories,
+    fandoms: db.fandoms
   })
 )
 app.get('/fandom/:domname', (req, res) => {

@@ -4,14 +4,35 @@
 .search-results
   margin-top: $inner-spacing
   display: none
+  flex-direction: row
+  flex-wrap: wrap
+  align-content: flex-start
+  justify-content: space-between
 
   &.active
     display: flex
 
+$th-height-small: 150px
+$th-height-med: 200px
+$th-height-large: 320px
+
 .search-result-item
-  margin-left: 5%
-  width: 90%
+  display: inline-block
   position: relative
+  align-self: flex-start
+  box-sizing: border-box
+  height: $th-height-small
+  width: $th-height-small
+  margin: $inner-spacing/2
+
+  @media(min-width: #{$screen-med})
+    width: $th-height-med
+    height: $th-height-med
+
+  @media(min-width: #{$screen-large})
+    width: $th-height-large
+    height: $th-height-large
+
   .thumbnail-image
     position: absolute
     top: 0
@@ -27,10 +48,18 @@
     left: 0
     background: linear-gradient($black, rgba(0, 0, 0, 0))
     width: 100%
-    padding-top: 3px
+    padding: $card-border-radius
     height: 3.0rem
     color: $white
     text-align: center
     z-index: 1
     border-top-left-radius: $card-border-radius
     border-top-right-radius: $card-border-radius
+
+    @media(min-width: #{$screen-med})
+      font-size: 1.5rem
+      height: 5.0rem
+
+    @media(min-width: #{$screen-large})
+      font-size: 2.0rem
+      height: 7.0rem

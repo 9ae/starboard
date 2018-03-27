@@ -1,11 +1,9 @@
 extends base.pug
 
 mixin result(name, image, link)
-  div(class="grid-item 1/2")
-    a(href=link)
-      .search-result-item
-        img(class="thumbnail-image card-shadow" src=image)
-        .thumbnail-label= name
+  .search-result-item
+    img(class="thumbnail-image card-shadow" src=image)
+    .thumbnail-label= name
 
 block scripts
   script(
@@ -14,7 +12,8 @@ block scripts
   )
 
 block content
-  
+  - var mydoms = [fandoms['harry_potter'], fandoms['buffy'], fandoms['night_circus']]
+  - var digimon = [fandoms['digimon_adv'], fandoms['digimon_tam'], fandoms['digimon_front']]
   div(class="container")
     div(class="section")
       h2 Discover Fandoms
@@ -27,13 +26,10 @@ block content
       )
       div(
         id="search_results"
-        class="grid search-results"
+        class="search-results"
       )
-        +result("Harry Potter", "/images/hp_th.jpg", "/fandom/harry_potter")
-        //- div(class="grid-item 1/2 search-result-item")
-        //-   p Digimon Tamers
-        //- div(class="grid-item 1/2 search-result-item")
-        //-   p Digimon Frontiers
+        each dom in digimon
+          +result(dom.name, dom.image)
   
     //- div(class="section")
     //-   h3 Browse
