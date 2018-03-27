@@ -20,7 +20,21 @@ module.exports = {
         'ships': [],
         'houses': ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw']
       },
-      'threads': []
+      'threads': [
+        {
+          "type": "fic",
+          "title": "Broken Things",
+          "author": "Anis",
+          "source": "ffn",
+          "isChaptered": true,
+          "rating": "PG-13",
+          "description": "They disover stuff...",
+          "tags": ["slow-burn","post-dh"]
+        },
+        {
+          
+        }
+      ]
     }
   }
 }
