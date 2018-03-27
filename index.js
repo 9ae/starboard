@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const db = require('./output/data.js')
+const db = require('./data.js')
 
 app.set('view engine', 'pug')
 
