@@ -1,5 +1,13 @@
 $tab-menu-item-color: $color1
 $tab-menu-item-color-active: $grey
+$color-fic: #00B0FF
+$color-art: #FF1744
+$color-topic: #1DE9B6
+$color-video: #FFB300
+
+=colorCard($color, $contrast: 25)
+  color: darken($color, $contrast)
+  background: lighten($color, $contrast)
 
 .tab-menu
   padding: $box-padding
@@ -56,19 +64,37 @@ $tab-menu-item-color-active: $grey
     margin-left: unset
     margin-right: unset
 
-.box-thumbnail
-  margin: 2px
-  p
-    margin-bottom: 3px
+.blurb
+  margin: $box-padding
+  padding: $box-padding + $card-border-radius
+  background-color: $white
+  border-radius: $card-border-radius
+
+@include box('fic', $color-fic)
+@include box('art', $color-art)
+@include box('topic', $color-topic)
+@include box('video', $color-video)
 
 .tag-chip
-  @extend .text-micro
   display: inline-block
-  border-radius: 4px
-  background-color: $light-grey
+  border-radius: 1.5rem
+  background-color: $white
   color: $dark-grey
-  padding: $box-padding
+  padding: 0.5rem 1.0rem
   margin: 6px
+  font-size: 0.75rem
+  line-height: 0.75rem
+  opacity: 0.6
 
 .tag-cloud
   margin-top: 12px
+
+.threads-header
+  .grid-item
+    margin-top: $inner-spacing
+
+    &:first-child
+      margin-top: 0
+
+.threads-content
+  margin-top: $inner-spacing

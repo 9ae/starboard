@@ -1,3 +1,15 @@
+%box-filled
+  background-color: $light-grey
+  padding: $box-padding
+
+%box-outline
+  padding: $box-padding
+  border: 1px solid #000
+
+=glow($color)
+  box-shadow: 0 0 5px $color
+  border: 1px solid $color
+
 .fill80
   width: 80%
   margin-left: 10%
@@ -12,14 +24,8 @@
   display: block
   margin-bottom: 10px
 
-%box-filled
-  background-color: $light-grey
-  padding: $box-padding
+.section
+  margin-top: $outer-spacing
 
-%box-outline
-  padding: $box-padding
-  border: 1px solid #000
-
-=glow($color)
-  box-shadow: 0 0 5px $color
-  border: 1px solid $color
+.element
+  margin-top: $inner-spacing
