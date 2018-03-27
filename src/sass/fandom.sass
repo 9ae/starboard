@@ -5,10 +5,6 @@ $color-art: #FF1744
 $color-topic: #1DE9B6
 $color-video: #FFB300
 
-=colorCard($color, $contrast: 25)
-  color: darken($color, $contrast)
-  background: lighten($color, $contrast)
-
 .tab-menu
   padding: $box-padding
 
@@ -84,10 +80,34 @@ $color-video: #FFB300
   margin: 6px
   font-size: 0.75rem
   line-height: 0.75rem
-  opacity: 0.6
+
+.box-fic
+  .tag-chip
+    background-color: lighten($color-fic, 30%)
+    color: darken($color-fic, 30%)
+
+.box-art
+  .thumbnail
+    margin-bottom: $inner-spacing
+  .tag-chip
+    background-color: lighten($color-art, 30%)
+    color: darken($color-art, 30%)
+
+.box-video
+  .thumbnail
+    margin-bottom: $inner-spacing
+  .tag-chip
+    background-color: lighten($color-video, 35%)
+    color: darken($color-video, 30%)
+
+.box-topic
+  .tag-chip
+    background-color: lighten($color-topic, 35%)
+    color: darken($color-topic, 30%)
+
 
 .tag-cloud
-  margin-top: 12px
+  margin-top: $inner-spacing
 
 .threads-header
   .grid-item

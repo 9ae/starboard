@@ -7,7 +7,7 @@ mixin tagCloud(tags)
 
 mixin cardFic(item)
   div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-fic")
+    div(class="blurb box-fic card-shadow")
       p(class="text-lead")= item.title
         | &nbsp;by #{item.author}
       p(class="text-small")= item.description
@@ -18,9 +18,9 @@ mixin cardFic(item)
 
 mixin cardArt(item)
   div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-art")
+    div(class="blurb box-art card-shadow")
       img(
-        class="img-rwd"
+        class="img-rwd thumbnail"
         src=item.thumbnail
         )
       p(class="text-lead")= item.title
@@ -30,7 +30,7 @@ mixin cardArt(item)
 
 mixin cardTopic(item)
   div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-topic")
+    div(class="blurb box-topic card-shadow")
       p(class="text-lead")= item.title
       p(class="text-small") last post by #{item.author}
         span(class="float-right") Repleis #{item.replies}
@@ -38,9 +38,9 @@ mixin cardTopic(item)
 
 mixin cardVideo(item)
   div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-video")
+    div(class="blurb box-video card-shadow")
       img(
-        class="img-rwd"
+        class="img-rwd thumbnail"
         src=item.thumbnail
         )
       p(class="text-lead")= item.title
