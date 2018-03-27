@@ -1,7 +1,10 @@
 extends base.pug
 
 mixin result(name, image, link)
-  .search-result-item
+  div(
+    class="search-result-item"
+    onClick="goToLink('"+link+"')"
+  )
     img(class="thumbnail-image card-shadow" src=image)
     .thumbnail-label= name
 
@@ -12,11 +15,22 @@ block scripts
   )
 
 block content
-  - var mydoms = [fandoms['harry_potter'], fandoms['buffy'], fandoms['night_circus']]
-  - var digimon = [fandoms['digimon_adv'], fandoms['digimon_tam'], fandoms['digimon_front']]
+  -
+    var mydoms = {
+      'harry_potter': fandoms['harry_potter'],
+      'buffy': fandoms['buffy'],
+      'night_circus': fandoms['night_circus']
+    }
+  -
+    var digimon = [fandoms['digimon_adv'], fandoms['digimon_tam'], fandoms['digimon_front']]
   div(class="container")
     div(class="section")
-      h2 Discover Fandoms
+      h2 My Fandoms
+      .search-results.active
+        each dom, key in mydoms
+          +result(dom.name, dom.image, "/fandom/"+key)
+    div(class="section")
+      h2 Discover more
       input(
         id="search_bar"
         type="search"
@@ -29,7 +43,7 @@ block content
         class="search-results"
       )
         each dom in digimon
-          +result(dom.name, dom.image)
+          +result(dom.name, dom.image, "/")
   
     //- div(class="section")
     //-   h3 Browse
