@@ -117,8 +117,8 @@ $states-color: lighten($color2, 25%)
 
       .bubble
         display: inline-block
-        color: $white
-        background-color: $black
+        color: $black
+        background-color: $grey
         padding: $box-padding + ($card-border-radius*0.5)
         border-radius: $card-border-radius
         font-weight: 300
@@ -132,33 +132,33 @@ $states-color: lighten($color2, 25%)
         &:after
           content: ''
           position: absolute
-          bottom: 2px
-          left: -0.75*$card-border-radius
+          bottom: 0
+          left: -1.5*$box-padding
           width: 0
           height: 0
-          border: 1.5*$card-border-radius solid transparent
+          border: 10px solid transparent
           border-left: 0
           z-index: -1
 
       &:nth-child(odd)
         .bubble
-          background-color: desaturate($color1, 20%)
+          background-color: $color3
           &:after
-            border-right-color: desaturate($color1, 20%)
+            border-right-color: $color3
 
       &:nth-child(even)
         .bubble
-          background-color: desaturate($color2, 20%)
+          background-color: $color4
 
           &:after
-            border-right-color: desaturate($color2, 20%)
+            border-right-color: $color4
 
   .reply-box
     width: 100%
     height: $reply-height
     z-index: 100
     background-color: $white
-    box-shadow: 0 -2px 5px 0 $light-grey
+    border-top: 1px solid $grey
     padding: $box-padding
     position: fixed
     bottom: 0
@@ -178,4 +178,4 @@ $states-color: lighten($color2, 25%)
       z-index: 102
       i
         font-size: 32px
-        color: $color4
+        color: $color1
