@@ -1,16 +1,23 @@
 input[type="text"], input[type="search"]
-  border-radius: 1.5rem
+  border-radius: 0
   padding: 6px 0.75rem
-  border-color: $light-grey
-  color: $color0
+  color: $dark-grey
   outline: none
+  border: none
+  border-bottom: $light-grey 1px dashed
+  padding-bottom: 0
+
+  &:focus, &:hover
+    border-bottom-style: solid
+    border-bottom-width: 2px
 
 input[type="button"], input[type="submit"], button, .btn
   font-size: 1.0rem
-  border-radius: 1.375rem
-  letter-spacing: 0.07rem
+  border-radius: 0
+  letter-spacing: 0.1rem
   margin: 2px
   outline: none
+  text-transform: uppercase
 
 textarea
   outline: none
