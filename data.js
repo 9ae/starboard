@@ -24,13 +24,14 @@ module.exports = {
       "threads": [
         {
           "type": "fic",
-          "title": "The Dark Lord's Realm",
-          "author": "Anis",
-          "source": "ffn",
+          "title": "The Rise of the Drackens",
+          "author": "StarLight_Massacre",
+          "source": "ao3",
           "isChaptered": true,
-          "chapters": "12/25",
+          "chapters": "16",
           "rating": "R",
-          "description": "They disover stuff...",
+          "description": "Harry comes into a very unexpected inheritance. He is a creature both rare and very dangerous, a creature that is black listed by the British Ministry. So now he must avoid detection at all costs, whilst choosing his life partners and dealing with impending pregnancy at just sixteen. With danger coming not just from the Ministry but even other creatures, what was he supposed to do?",
+          "excerpt": "Harry James Potter woke up slowly, languidly, in the early hours of the morning on his sixteenth birthday, not knowing what had woken him up, but he found out soon as he realised some very surprising, unexpected and, quite frankly, shocking changes.",
           "tags": ["slow-burn","post-dh"]
         },
         {

@@ -7,15 +7,11 @@ $color-video: #FFB300
 $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
 
 =imageBlurb
-  padding: 0
   .thumbnail
     border-top-left-radius: $card-border-radius
     border-top-right-radius: $card-border-radius
     width: 100%
     margin-bottom: $inner-spacing
-  .content
-    padding: $box-padding + $card-border-radius
-    padding-top: 0
 
 @keyframes shrinkFilter
   from
@@ -97,13 +93,32 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
 
 .blurb
   margin-top: $separator-spacing
-  padding: $box-padding + $card-border-radius
+  padding: 0
+  // $box-padding + $card-border-radius
   background-color: $white
   border-radius: $card-border-radius
   width: calc(100% - 0.75rem)
 
   &:first-child
     margin-top: 0
+
+  .excerpt
+    background-color: $white
+    color: $color-fic
+    width: 100%
+    height: 200px
+    overflow: hidden
+    padding: 1.5rem $box-padding + $card-border-radius
+    border-top-left-radius: $card-border-radius
+    border-top-right-radius: $card-border-radius
+    line-height: 1.2rem
+    font-family: $font-family-headings
+
+    &::first-letter
+      font-size: 3.0rem
+
+  .content
+    padding: $box-padding + $card-border-radius
 
 @include box('fic', $color-fic)
 @include box('art', $color-art)

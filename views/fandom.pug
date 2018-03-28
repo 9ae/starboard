@@ -7,13 +7,15 @@ mixin tagCloud(tags)
 
 mixin cardFic(item)
   div(class="blurb box-fic card-shadow")
-    p(class="text-lead")= item.title
-      | &nbsp;by #{item.author}
-    p(class="text-light")= item.description
-    p.text-light Rating: #{item.rating}
+    .excerpt= item.excerpt
+    .content
+      p(class="text-lead")= item.title
+        | &nbsp;by #{item.author}
+      p(class="text-light text-small")= item.description
+      p.text-light Rating: #{item.rating}
       if item.isChaptered
-        span(class="float-right") Chapters: #{item.chapters}
-    +tagCloud(item.tags)
+        p.text-light Chapters: #{item.chapters}
+      +tagCloud(item.tags)
 
 mixin cardArt(item)
   div(class="blurb box-art card-shadow")
