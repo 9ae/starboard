@@ -23,10 +23,11 @@ mixin cardArt(item)
         class="img-rwd thumbnail"
         src=item.thumbnail
         )
-      p(class="text-lead")= item.title
-        | &nbsp;by #{item.author}
-      p(class="text-small")= item.description
-      +tagCloud(item.tags)
+      .content
+        p(class="text-lead")= item.title
+          | &nbsp;by #{item.author}
+        p(class="text-small")= item.description
+        +tagCloud(item.tags)
 
 mixin cardTopic(item)
   div(class="grid-item 6/12 compact-1/1")
@@ -43,11 +44,12 @@ mixin cardVideo(item)
         class="img-rwd thumbnail"
         src=item.thumbnail
         )
-      p(class="text-lead")= item.title
-        | &nbsp;by #{item.author}
-      p(class="text-small")= item.description
-      p Rating: #{item.rating}
-      +tagCloud(item.tags)
+      .content
+        p(class="text-lead")= item.title
+          | &nbsp;by #{item.author}
+        p(class="text-small")= item.description
+        p Rating: #{item.rating}
+        +tagCloud(item.tags)
 
 block scripts
   script(
