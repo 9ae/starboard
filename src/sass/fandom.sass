@@ -2,8 +2,8 @@ $tab-menu-item-color: $color1
 $tab-menu-item-color-active: $grey
 $color-fic: #00B0FF
 $color-art: #FF1744
-$color-topic: #1DE9B6
-$color-video: #FFB300
+$color-topic: #00bb8c
+$color-video: #ffbf00
 $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
 
 =imageBlurb
@@ -16,6 +16,9 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   .content
     padding: $box-padding + $card-border-radius
     padding-top: 0
+
+=blurbDivider($color)
+  border-bottom: 10px solid $color
 
 .tab-menu
   padding: $box-padding
@@ -73,15 +76,15 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     margin-right: unset
 
 .blurb
-  margin: $box-padding
   padding: $box-padding + $card-border-radius
   background-color: $white
   border-radius: $card-border-radius
+  margin-bottom: 2*$inner-spacing
 
-@include box('fic', $color-fic)
-@include box('art', $color-art)
-@include box('topic', $color-topic)
-@include box('video', $color-video)
+@include box('fic', $color-fic, $contrast: 20%)
+@include box('art', $color-art, $contrast: 20%)
+@include box('topic', $color-topic, $contrast: 20%)
+@include box('video', $color-video, $contrast: 20%)
 
 .tag-chip
   display: inline-block
@@ -94,26 +97,42 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   line-height: 0.75rem
 
 .box-fic
+  // +blurbDivider($color-fic)
+  background-color: $white
+  .title
+    color: darken($color-fic, 10%)
   .tag-chip
-    background-color: lighten($color-fic, 30%)
-    color: darken($color-fic, 30%)
+    background-color: $color-fic
+    color: $white
 
 .box-art
   +imageBlurb
+  background-color: $white
+  // +blurbDivider($color-art)
+  .title
+    color: darken($color-art, 10%)
   .tag-chip
-    background-color: lighten($color-art, 30%)
-    color: darken($color-art, 30%)
+    background-color: $color-art
+    color: $white
 
 .box-video
   +imageBlurb
+  background-color: $white
+  //  +blurbDivider($color-video)
+  .title
+    color: darken($color-video, 10%)
   .tag-chip
-    background-color: lighten($color-video, 35%)
-    color: darken($color-video, 30%)
+    background-color: $color-video
+    color: $white
 
 .box-topic
+  background-color: $white
+  //  +blurbDivider($color-topic)
+  .title
+    color: darken($color-topic, 10%)
   .tag-chip
-    background-color: lighten($color-topic, 35%)
-    color: darken($color-topic, 30%)
+    background-color: $color-topic
+    color: $white
 
 
 .tag-cloud
