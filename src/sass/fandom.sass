@@ -4,6 +4,18 @@ $color-fic: #00B0FF
 $color-art: #FF1744
 $color-topic: #1DE9B6
 $color-video: #FFB300
+$extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
+
+=imageBlurb
+  padding: 0
+  .thumbnail
+    border-top-left-radius: $card-border-radius
+    border-top-right-radius: $card-border-radius
+    width: 100%
+    margin-bottom: $inner-spacing
+  .content
+    padding: $box-padding + $card-border-radius
+    padding-top: 0
 
 .tab-menu
   padding: $box-padding
@@ -87,15 +99,13 @@ $color-video: #FFB300
     color: darken($color-fic, 30%)
 
 .box-art
-  .thumbnail
-    margin-bottom: $inner-spacing
+  +imageBlurb
   .tag-chip
     background-color: lighten($color-art, 30%)
     color: darken($color-art, 30%)
 
 .box-video
-  .thumbnail
-    margin-bottom: $inner-spacing
+  +imageBlurb
   .tag-chip
     background-color: lighten($color-video, 35%)
     color: darken($color-video, 30%)
