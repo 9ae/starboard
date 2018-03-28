@@ -4,8 +4,8 @@ mixin result(name, image, link)
   div(
     class="search-result-item"
     onClick="goToLink('"+link+"')"
+    style="background-image:url('"+image+"');"
   )
-    img(class="thumbnail-image card-shadow" src=image)
     .thumbnail-label= name
 
 block scripts
