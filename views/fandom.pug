@@ -6,50 +6,46 @@ mixin tagCloud(tags)
       span(class="tag-chip")= tag
 
 mixin cardFic(item)
-  div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-fic card-shadow")
+  div(class="blurb box-fic card-shadow")
+    p(class="text-lead")= item.title
+      | &nbsp;by #{item.author}
+    p(class="text-small")= item.description
+    p Rating: #{item.rating}
+      if item.isChaptered
+        span(class="float-right") Chapters: #{item.chapters}
+    +tagCloud(item.tags)
+
+mixin cardArt(item)
+  div(class="blurb box-art card-shadow")
+    img(
+      class="img-rwd thumbnail"
+      src=item.thumbnail
+      )
+    .content
+      p(class="text-lead")= item.title
+        | &nbsp;by #{item.author}
+      p(class="text-small")= item.description
+      +tagCloud(item.tags)
+
+mixin cardTopic(item)
+  div(class="blurb box-topic card-shadow")
+    p(class="text-lead")= item.title
+    p(class="text-small") last post by #{item.author}
+      span(class="float-right") Replies #{item.replies}
+    +tagCloud(item.tags)
+
+mixin cardVideo(item)
+  div(class="blurb box-video card-shadow")
+    img(
+      class="img-rwd thumbnail"
+      src=item.thumbnail
+      )
+    .content
       p(class="text-lead")= item.title
         | &nbsp;by #{item.author}
       p(class="text-small")= item.description
       p Rating: #{item.rating}
-        if item.isChaptered
-          span(class="float-right") Chapters: #{item.chapters}
       +tagCloud(item.tags)
-
-mixin cardArt(item)
-  div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-art card-shadow")
-      img(
-        class="img-rwd thumbnail"
-        src=item.thumbnail
-        )
-      .content
-        p(class="text-lead")= item.title
-          | &nbsp;by #{item.author}
-        p(class="text-small")= item.description
-        +tagCloud(item.tags)
-
-mixin cardTopic(item)
-  div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-topic card-shadow")
-      p(class="text-lead")= item.title
-      p(class="text-small") last post by #{item.author}
-        span(class="float-right") Replies #{item.replies}
-      +tagCloud(item.tags)
-
-mixin cardVideo(item)
-  div(class="grid-item 6/12 compact-1/1")
-    div(class="blurb box-video card-shadow")
-      img(
-        class="img-rwd thumbnail"
-        src=item.thumbnail
-        )
-      .content
-        p(class="text-lead")= item.title
-          | &nbsp;by #{item.author}
-        p(class="text-small")= item.description
-        p Rating: #{item.rating}
-        +tagCloud(item.tags)
 
 block scripts
   script(
@@ -60,7 +56,7 @@ block scripts
 block content
   .container
     .section
-      .grid.grid-pair.grid-middle
+      .grid.grid-pair.status-heading
         p(class="grid-item 2/3 text-small")
           strong 987
           |&nbsp;members &nbsp;&nbsp;
@@ -79,8 +75,10 @@ block content
             ) Join
   
     if 'characters' in cats
-      .section
-        div(class="tab-menu")
+      .section.small-divide
+        p
+          a(href="#" onClick="showCats(this)") Find sub-fandoms
+        div(id="tabMenu" class="tab-menu")
           ul(class="tab-links")
             each val, index in cats
               li(class= index === 'characters' ? "active": "")
@@ -101,17 +99,15 @@ block content
   
     .section
       div(class="grid threads-header")
-        div(class="grid-item 1/1")
-          h3 Trending inside #{title}
-        div(class="grid-item 2/3 compact-1/1")
+        div(class="grid-item 1/3 compact-2/5 filter-button-wrapper")
+          a(class="btn btn-outline filter-button") Filters
+        div(class="grid-item 2/3 compact-3/5")
           input(
             type="search"
             class="search"
             placeholder="search threads"
           )
-        div(class="grid-item 1/3 compact-1/1")
-          a(class="btn btn-outline filter-button") Filters
-      div(class="grid grid-top threads-content")
+      div(class="threads-content")
         each th in threads
           case th.type
             when 'fic'

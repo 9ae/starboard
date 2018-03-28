@@ -18,7 +18,11 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     padding-top: 0
 
 .tab-menu
-  padding: $box-padding
+  padding: $box-padding 0
+  display: none
+
+  &.show
+    display: block
 
   ul.tab-links
     list-style-type: none
@@ -49,13 +53,17 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   .tab-details
     margin-top: $inner-spacing
 
+    a
+      color: $color1
+      text-decoration: none
+
   .show-more
     margin-top: 20px
     margin-bottom: 10px
-    text-align: center
 
     a
-      color: $grey
+      color: $color-link
+      text-decoration: underline
 
   .rest
     display: none
@@ -64,7 +72,7 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
       display: flex
 
 .filter-button
-  @extend .fill80
+  width: 100%
   text-align: center
 
   @media(min-width: $screen-med)
@@ -73,10 +81,14 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     margin-right: unset
 
 .blurb
-  margin: $box-padding
+  margin-top: $separator-spacing
   padding: $box-padding + $card-border-radius
   background-color: $white
   border-radius: $card-border-radius
+  width: calc(100% - 0.75rem)
+
+  &:first-child
+    margin-top: 0
 
 @include box('fic', $color-fic)
 @include box('art', $color-art)
@@ -92,6 +104,9 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   margin: 6px
   font-size: 0.75rem
   line-height: 0.75rem
+
+  &:first-child
+    margin-left: 0
 
 .box-fic
   .tag-chip
@@ -120,11 +135,17 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   margin-top: $inner-spacing
 
 .threads-header
-  .grid-item
-    margin-top: $inner-spacing
-
-    &:first-child
-      margin-top: 0
+  margin-left: -0.25rem
+  margin-right: -0.25rem
 
 .threads-content
-  margin-top: $inner-spacing
+  margin-top: $separator-spacing
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+#joinleave
+  min-width: 88px
+
+.status-heading
+  align-items: baseline

@@ -9,6 +9,11 @@ const showMore = element => {
   }
 };
 
+const showCats = element => {
+  element.style.display = 'none';
+  document.getElementById('tabMenu').classList.add('show');
+};
+
 window.onload = () => {
   document.getElementById('joinleave').addEventListener('click', evt => {
     if (evt.target.innerHTML === "Join") {
