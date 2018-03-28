@@ -1,16 +1,17 @@
 $avatar-height: 64px
-$states-height: 26px
+$states-height: 28px
 $reply-height: 80px
 $nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
-$states-color: lighten($color2, 25%)
-//lighten($color2, 25%)
+$states-color: lighten($color2, 50%)
 
 .peace-circle
 
   .states-wrapper
-    margin-top: ($outer-spacing/-2) + 5px
+    margin-top: ($outer-spacing/-2)
     margin-bottom: $inner-spacing + 5px
     box-sizing: border-box
+    background-color: $states-color
+    height: $states-height
 
   ul.states
     list-style-type: none
@@ -21,16 +22,45 @@ $states-color: lighten($color2, 25%)
 
     li
       display: inline-block
+      background-color: $states-color
       height: $states-height
       margin-left: 0
-      margin-right: 10px
-      vertical-align: top
+      margin-right: $states-height/2 - 3px
+      position: relative
+      box-sizing: border-box
+
+      &:before
+        content: ""
+        background-color: $states-color
+        width: $states-height/2 - 1px
+        height: $states-height
+        display: block
+        position: absolute
+        box-sizing: border-box
+        top: 0
+        left: ($states-height/-4) + 1px
+        transform: skewX(30deg)
+        border-left: solid 1px $color2
+
+      &:after
+        content: ""
+        background-color: $states-color
+        width: $states-height/2 - 1px
+        height: $states-height
+        display: block
+        position: absolute
+        box-sizing: border-box
+        top: 0
+        right: $states-height/-4
+        transform: skewX(30deg)
+
+      &:first-child
+        &::before
+          border-left: 0
 
       .state-title
         display: none
-        background-color: $states-color
         padding: $states-height/4 $states-height/2
-        border-radius: $states-height/2
         color: $color2
         font-size: 0.8rem
         line-height: 0.8rem
@@ -39,13 +69,11 @@ $states-color: lighten($color2, 25%)
         text-transform: uppercase
       .state-placeholder
         display: inline-block
-        width: $states-height
+        width: $states-height/2
         height: $states-height
-        background-color: $states-color
-        border-radius: $states-height/2
-        padding: 0 $box-padding
 
       &.active
+        background-color: $states-color
         .state-title
           display: inline-block
         .state-placeholder
