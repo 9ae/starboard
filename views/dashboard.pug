@@ -2,10 +2,10 @@ extends base.pug
 
 mixin result(name, image, link)
   div(
-    class="search-result-item"
+    class="search-result-item card-shadow"
     onClick="goToLink('"+link+"')"
+    style="background-image:url('"+image+"');"
   )
-    img(class="thumbnail-image card-shadow" src=image)
     .thumbnail-label= name
 
 block scripts
@@ -19,7 +19,8 @@ block content
     var mydoms = {
       'harry_potter': fandoms['harry_potter'],
       'buffy': fandoms['buffy'],
-      'night_circus': fandoms['night_circus']
+      'night_circus': fandoms['night_circus'],
+      'digimon_tam': fandoms['digimon_tam']
     }
   -
     var digimon = [fandoms['digimon_adv'], fandoms['digimon_tam'], fandoms['digimon_front']]
