@@ -14,6 +14,16 @@ const showCats = element => {
   document.getElementById('tabMenu').classList.add('show');
 };
 
+const expandSearch = () => {
+  document.getElementById('filterbutton').innerHTML = "";
+  document.getElementById('filterbutton').classList.add('hide');
+};
+
+const contractSearch = () => {
+  document.getElementById('filterbutton').innerHTML = "Filter";
+  document.getElementById('filterbutton').classList.remove('hide');
+};
+
 window.onload = () => {
   document.getElementById('joinleave').addEventListener('click', evt => {
     if (evt.target.innerHTML === "Join") {

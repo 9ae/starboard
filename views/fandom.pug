@@ -98,15 +98,18 @@ block content
               a(href="#" onClick="showMore(this)") Show More
   
     .section
-      div(class="grid threads-header")
-        div(class="grid-item 1/3 compact-2/5 filter-button-wrapper")
-          a(class="btn btn-outline filter-button") Filters
-        div(class="grid-item 2/3 compact-3/5")
-          input(
-            type="search"
-            class="search"
-            placeholder="search threads"
-          )
+      div(class="threads-header")
+        a(
+          id="filterbutton"
+          class="btn btn-outline filter-button"
+        ) Filters
+        input(
+          type="search"
+          class="search"
+          placeholder="search threads"
+          onFocus="expandSearch()"
+          onBlur="contractSearch()"
+        )
       div(class="threads-content")
         each th in threads
           case th.type
