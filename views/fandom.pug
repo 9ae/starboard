@@ -31,10 +31,11 @@ mixin cardArt(item)
 
 mixin cardTopic(item)
   div(class="blurb box-topic card-shadow")
-    p(class="text-lead")= item.title
-    p(class="text-light") last post by #{item.author}
-      span(class="float-right") Replies #{item.replies}
-    +tagCloud(item.tags)
+    .content
+      p(class="text-lead")= item.title
+      p(class="text-light") last post by #{item.author}
+        span(class="float-right") Replies #{item.replies}
+      +tagCloud(item.tags)
 
 mixin cardVideo(item)
   div(class="blurb box-video card-shadow")

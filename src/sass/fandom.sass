@@ -13,6 +13,10 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     width: 100%
     margin-bottom: $inner-spacing
 
+=textBlurb($color)
+  background-color: darken($color, 25%)
+  color: $light-grey
+
 @keyframes shrinkFilter
   from
     width: auto
@@ -103,8 +107,6 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     margin-top: 0
 
   .excerpt
-    background-color: $white
-    color: $color-fic
     width: 100%
     height: 200px
     overflow: hidden
@@ -139,6 +141,8 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     margin-left: 0
 
 .box-fic
+  .excerpt
+    +textBlurb($color-fic)
   .tag-chip
     background-color: lighten($color-fic, 30%)
     color: darken($color-fic, 30%)
