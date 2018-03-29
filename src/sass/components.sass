@@ -60,4 +60,24 @@ input.validation
   &.fail
     +glow($color-negative)
 
-//@include box("thumbnail", $grey, $contrast: 25%)
+.fab
+  z-index: 1000
+  position: fixed
+  bottom: $grid-gutter/2
+  right: $grid-gutter/2
+  background-color: $color1
+  width: $fab-size
+  height: $fab-size
+  padding: $box-padding
+  border-radius: $fab-size/2
+  text-align: center
+  box-shadow: 0 3px 5px 0 $dark-grey
+
+  &:hover
+    box-shadow: 0 5px 7px 0 $dark-grey
+    transform: scale(1.05)
+
+  i
+    font-size: $fab-size - 2*$box-padding
+    &.fas.fa-plus
+      color: #fff
