@@ -181,8 +181,6 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     flex-grow: 1
     display: inline-block
     margin-right: $inner-spacing
-    animation-name: expandFilter
-    animation-duration: 2s
 
     &.hide
       min-width: 0
@@ -192,6 +190,10 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
       border: 0
       animation-name: shrinkFilter
       animation-duration: 1.5s
+
+    &.show
+      animation-name: expandFilter
+      animation-duration: 2s
 
   .search
     display: inline-block

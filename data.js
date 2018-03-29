@@ -23,6 +23,14 @@ module.exports = {
       },
       "threads": [
         {
+          "type": "art",
+          "title": "Always said Severus",
+          "author": "Naomi",
+          "thumbnail": "/images/data_potterpuffs.jpg",
+          "description": "Potterpuffs redux",
+          "tags": ["potterpuffs", "snape", "dumbledore"]
+        },
+        {
           "type": "fic",
           "title": "The Rise of the Drackens",
           "author": "StarLight_Massacre",
@@ -33,14 +41,6 @@ module.exports = {
           "description": "Harry comes into a very unexpected inheritance. He is a creature both rare and very dangerous, a creature that is black listed by the British Ministry. So now he must avoid detection at all costs, whilst choosing his life partners and dealing with impending pregnancy at just sixteen. With danger coming not just from the Ministry but even other creatures, what was he supposed to do?",
           "excerpt": "Harry James Potter woke up slowly, languidly, in the early hours of the morning on his sixteenth birthday, not knowing what had woken him up, but he found out soon as he realised some very surprising, unexpected and, quite frankly, shocking changes.",
           "tags": ["slow-burn","post-dh"]
-        },
-        {
-          "type": "art",
-          "title": "Always said Severus",
-          "author": "Naomi",
-          "thumbnail": "/images/data_potterpuffs.jpg",
-          "description": "Potterpuffs redux",
-          "tags": ["potterpuffs", "snape", "dumbledore"]
         },
         {
           "type": "video",

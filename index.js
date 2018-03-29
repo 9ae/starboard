@@ -18,7 +18,7 @@ app.get('/fandom/:domname', (req, res) => {
     title: fandom.name,
     cats: fandom.subdoms,
     threads: fandom.threads,
-    isJoined: false
+    isJoined: true
   });
 })
 app.get('/circle', (req, res) =>

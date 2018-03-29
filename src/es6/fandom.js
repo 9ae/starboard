@@ -16,12 +16,14 @@ const showCats = (element) => {
 
 const expandSearch = () => {
   document.getElementById('filterbutton').innerHTML = "";
+  document.getElementById('filterbutton').classList.remove('show');
   document.getElementById('filterbutton').classList.add('hide');
 }
 
 const contractSearch = () => {
   document.getElementById('filterbutton').innerHTML = "Filter";
   document.getElementById('filterbutton').classList.remove('hide');
+  document.getElementById('filterbutton').classList.add('show');
 }
 
 window.onload = () => {
