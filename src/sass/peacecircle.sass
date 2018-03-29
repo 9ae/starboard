@@ -1,7 +1,7 @@
 $avatar-height: 64px
 $states-height: 26px
 $reply-height: 80px
-$nonconvoheight: 64px + $avatar-height + 20px + $states-height + $reply-height
+$nonconvoheight: 64px + $avatar-height + 20px + $states-height
 $states-color: $color1
 //saturate($color1, 25%)
 //lighten($color2, 25%)
@@ -97,6 +97,9 @@ $states-color: $color1
     height: calc(100% - #{$nonconvoheight})
     padding-bottom: $outer-spacing
 
+    &.speaking
+      height: calc(100% - #{$nonconvoheight + $reply-height})
+
     .line
       width: 100%
       margin-top: $inner-spacing
@@ -107,16 +110,19 @@ $states-color: $color1
       &:first-child
         margin-top: 0
 
+      &.is-prompt
+        margin-top: $outer-spacing
+
       img
         display: inline-block
         width: 32px
         height: auto
-        margin-right: $box-padding/2
         margin-bottom: 5px
         box-sizing: border-box
         z-index: 1
 
       .bubble
+        margin-left: 10px
         display: inline-block
         color: $color0
         background-color: $black
@@ -164,6 +170,9 @@ $states-color: $color1
     position: fixed
     bottom: 0
     left: 0
+
+    &.hide
+      display: none
 
     textarea
       @extend .fill90

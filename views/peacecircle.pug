@@ -1,15 +1,18 @@
 extends base.pug
 
 mixin person(name, avatar, isActive)
-  div(class=isActive ? 'person active' : 'person')
+  div(
+    id=name
+    class=isActive ? 'person active' : 'person'
+    )
     img(
       class="img-circle"
       src=avatar
     )
     p.name.text-micro= name
 
-mixin line(avatar, text)
-  .line
+mixin line(avatar, text, isPrompt)
+  div(class=isPrompt ? 'line is-prompt': 'line')
     img(class="img-circle" src=avatar)
     .bubble= text
 
@@ -25,7 +28,7 @@ block content
     .states-wrapper
       ul(class="states")
         each val, index in states
-          li(class=index===1 ? "active": "")
+          li(id="state"+index class=index===1 ? "active": "")
             .state-title.text-small= val.title
             div(class="state-placeholder") &nbsp;
       hr(class="states-line")
@@ -36,14 +39,23 @@ block content
           +person(person.name, person.avatar, person.name == "Me")
         +person('Moderator', modAvatar, false)
 
-      .convo
-        +line(modAvatar, states[0].prompts)
-        +line(participants[0].avatar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum elementum gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-        +line(participants[1].avatar, "Sed feugiat lacus eu purus varius, vitae malesuada tortor laoreet. The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box")
-        +line(participants[2].avatar, "Nulla ultrices, nisi quis placerat suscipit, augue elit egestas lorem, at fermentum erat metus id tortor. The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box")
-        +line(modAvatar, states[1].prompts)
+      .convo.speaking(id="convo")
+        +line(modAvatar, states[0].prompts, false)
+        +line(participants[0].avatar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum elementum gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", false)
+        +line(participants[1].avatar, "Sed feugiat lacus eu purus varius, vitae malesuada tortor laoreet.", false)
+        +line(participants[2].avatar, "Nulla ultrices, nisi quis placerat suscipit, augue elit egestas lorem, at fermentum erat metus id tortor.", false)
+        +line(modAvatar, states[1].prompts, true)
+        +line(participants[0].avatar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", false)
+        +line(participants[1].avatar, "vitae malesuada tortor laoreet, sed feugiat lacus eu purus varius", false)
       
-    .reply-box
-      textarea(placeholder="Your feelings and thoughts?")
-      a(href="#" class="send-btn")
+    div(id="replywrapper" class="reply-box")
+      textarea(
+        id="replybox"
+        placeholder="Your feelings and thoughts?"
+      )
+      a(
+        href="#"
+        class="send-btn"
+        onClick="goToNext()"
+      )
         i.fas.fa-arrow-circle-up
