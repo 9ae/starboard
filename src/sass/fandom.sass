@@ -6,6 +6,11 @@ $color-topic: #1DE9B6
 $color-video: #FFB300
 $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
 
+=box($name, $color, $contrast: 25%)
+  .box-#{$name}
+    color: darken($color, $contrast)
+    background: lighten($color, $contrast)
+
 =imageBlurb
   .thumbnail
     border-top-left-radius: $card-border-radius
