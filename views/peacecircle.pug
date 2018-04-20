@@ -6,14 +6,13 @@ mixin person(name, avatar, isActive)
     class=isActive ? 'person active' : 'person'
     )
     img(
-      class="img-circle"
       src=avatar
     )
     p.name.text-micro= name
 
 mixin line(avatar, text, isPrompt)
   div(class=isPrompt ? 'line is-prompt': 'line')
-    img(class="img-circle" src=avatar)
+    img(src=avatar)
     .bubble= text
 
 block scripts

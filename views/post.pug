@@ -1,0 +1,21 @@
+extends base.pug
+
+block content
+  .container
+    .section
+      select(class="post-type")
+        option(value="fic") Fanfiction
+        option(value="art") Artwork
+        option(value="video") Video
+        option(value="topic" selected="selected") Discussion
+      
+    .section.post-block(id="topic")
+      .form-field
+        label Topic
+        input(type="text")
+      .form-field
+        label Discussion
+        textarea
+    
+    .section
+      input(type="submit" class="btn btn-primary submit")

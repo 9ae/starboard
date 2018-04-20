@@ -1,10 +1,10 @@
 $header-height: 48px
 $icon-height: 32px
-$header-color: darken($color2, 5%)
+$header-color: saturate($color2, 5%)
 $bottom-offset: 3px
 
 .app-header
-  background-color: $header-color
+  background-color: transparent
   width: 100%
   height: $header-height
   display: flex
@@ -24,13 +24,15 @@ $bottom-offset: 3px
   .title
     text-align: center
     display: inline-block
-    color: $white
+    color: $header-color
     margin-bottom: 0
     font-size: 1.2rem
     line-height: 1.2rem
     vertical-align: baseline
     text-transform: uppercase
     letter-spacing: 0.08rem
+    -webkit-margin-before: 0
+    margin-before: 0
 
   .header-icons
     display: inline-block
@@ -39,7 +41,7 @@ $bottom-offset: 3px
     i
       font-size: $icon-height
       margin-right: 10px
-      color: $white
+      color: $header-color
 
       &:last-child
         margin-right: 0
