@@ -58,24 +58,22 @@ block scripts
 
 block content
   .container
-    .section
-      .grid.grid-pair.status-heading
-        p(class="grid-item 2/3 text-small")
+    .section.flex-fill.align-baseline
+        span(class="text-small")
           strong 987
           |&nbsp;members &nbsp;&nbsp;
           strong 21,159
           |&nbsp;threads
-        div(class="grid-item 1/3")
-          if isJoined
-            button(
-              id="joinleave"
-              class="btn btn-outline"
-            ) Leave
-          else
-            button(
-              id="joinleave"
-              class="btn"
-            ) Join
+        if isJoined
+          button(
+            id="joinleave"
+            class="btn btn-outline"
+          ) Leave
+        else
+          button(
+            id="joinleave"
+            class="btn"
+          ) Join
   
     if 'characters' in cats
       .section.small-divide
@@ -87,14 +85,14 @@ block content
               li(class= index === 'characters' ? "active": "")
                 a(href="#")= index
           div(class="tab-details")
-            div(class="grid")
+            .col-list
               each i in [0,1,2,3,4,5]
-                div(class="grid-item 1/3 compact-1/2 element")
+                p
                   a(href="#")= cats.characters[i]
-            div(id="theRest" class="grid rest")
+            div(id="theRest" class="col-list rest")
               - var n = 6
               while n < cats.characters.length
-                div(class="grid-item 1/3 compact-1/2 element")
+                p
                   a(href="#")= cats.characters[n]
                 - n++
             p(class="show-more")
@@ -102,7 +100,7 @@ block content
   
     .section
       div(class="threads-header")
-        a(
+        button(
           id="filterbutton"
           class="btn btn-outline filter-button"
         ) Filters

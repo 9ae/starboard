@@ -58,6 +58,7 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     margin-bottom: 0
     display: flex
     justify-content: space-around
+    padding-left: 0
 
     li
       display: inline-block
@@ -98,7 +99,7 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     display: none
 
     &.active
-      display: flex
+      display: block
 
 .blurb
   margin-top: $separator-spacing
@@ -120,6 +121,7 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
     border-top-right-radius: $card-border-radius
     line-height: 1.2rem
     font-family: $font-family-headings
+    box-sizing: border-box
 
     &::first-letter
       font-size: 3.0rem
@@ -179,6 +181,7 @@ $extend-edges-of-card: 2 * ($box-padding + $card-border-radius)
   display: flex
   justify-content: space-between
   flex-wrap: nowrap
+  align-items: baseline
 
   .filter-button
     text-align: center
