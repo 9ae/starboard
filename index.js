@@ -35,6 +35,10 @@ app.get('/profile', (req, res) =>
 app.get('/post', (req, res) =>
   res.render('post', { title: 'Contribute'})
 )
-
+/*
+app.get('/topic', (req, res) =>
+  res.render('topic', { title: ''})
+)
+*/
 app.use(express.static('output'))
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

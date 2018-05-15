@@ -7,7 +7,8 @@
     "instyle": "sass --watch src/sass/main.sass:output/styles/main.css",
     "build": "babel src/es6 -d output/js",
     "go": "npm run build; npm run instyle >> sass.log; node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build; sass src/sass/main.sass output/styles/main.css; node index.js"
   },
   "author": "",
   "license": "ISC",

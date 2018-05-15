@@ -60,7 +60,20 @@ module.exports = {
           "tags": ["speculation"],
           "author": "cassie_clare"
         }
-      ]
+      ],
+      "topic": {
+        "title": "Marauders Netflix series?",
+        "tags": ["speculation"],
+        "posts": [
+          {
+            "author": "cassie_clare",
+            "message": "lorem ipsum....."
+          }, {
+            "author": "88dr",
+            "message": "blah blah",
+          }
+        ]
+      }
     },
     "digimon_adv": {
       "name": "Digimon Adventures",
